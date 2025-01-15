@@ -17,38 +17,3 @@ app.use(express.static('client/public'));
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
-
-// 3. Backend - server/routes/api.js
-const express = require('express');
-const router = express.Router();
-
-// Utility function to format date to UTC
-const formatToUTC = (date) => date.toUTCString();
-
-router.get('/:date?', (req, res) => {
-  const { date } = req.params;
-
-  let parsedDate;
-
-  // Handle empty date parameter (current time)
-  if (!date) {
-    parsedDate = new Date();
-  } else if (!isNaN(date)) {
-    // Handle timestamp input
-    parsedDate = new Date(Number(date));
-  } else {
-    // Handle string input
-    parsedDate = new Date(date);
-  }
-
-  if (isNaN(parsedDate.getTime())) {
-    return res.json({ error: 'Invalid Date' });
-  }
-
-  res.json({
-    unix: parsedDate.getTime(),
-    utc: formatToUTC(parsedDate),
-  });
-});
-
-module.exports = router;
