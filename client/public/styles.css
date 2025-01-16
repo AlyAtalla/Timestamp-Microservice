@@ -32,11 +32,18 @@ li {
 
 pre {
   background-color: #f4f4f4;
-  color: #ecf0f1;
   padding: 10px;
   border-radius: 5px;
   overflow-x: auto;
   border: 1px solid #ddd;
+}
+
+#exampleOutput {
+  color: #3498db; /* Distinct color for example output */
+}
+
+#userOutput {
+  color: #e74c3c; /* Distinct color for user input output */
 }
 
 p {
