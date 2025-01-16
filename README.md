@@ -18,7 +18,7 @@ This is a simple timestamp microservice built with Node.js and Express.
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/Timestamp-Microservice.git
+    git clone https://github.com/alyatalla/Timestamp-Microservice.git
     cd Timestamp-Microservice
     ```
 
