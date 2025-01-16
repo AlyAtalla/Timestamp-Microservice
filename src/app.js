@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
 });
 app.use('/api', routes);
 
-const PORT = process.env.PORT || 3001; // Changed port to 3001
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
