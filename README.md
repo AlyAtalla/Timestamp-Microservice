@@ -1,6 +1,5 @@
 # Timestamp Microservice
 
-
 ![Screenshot](Screenshot.png)
 This is a simple timestamp microservice built with Node.js and Express.
 
@@ -32,7 +31,7 @@ This is a simple timestamp microservice built with Node.js and Express.
     npm start
     ```
 
-4. Open your browser and navigate to `http://localhost:3000`.
+4. Open your browser and navigate to `http://localhost:3001`.
 
 ## Deployment
 

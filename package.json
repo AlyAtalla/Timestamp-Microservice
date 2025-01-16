@@ -2,10 +2,10 @@
   "name": "timestamp-microservice",
   "version": "1.0.0",
   "description": "This is a simple timestamp microservice built with Node.js and Express.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/app.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
