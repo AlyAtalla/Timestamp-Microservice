@@ -1,34 +1,41 @@
 # Timestamp Microservice
-For the first project of FreeCodeCamp API and Microservice curriculum, we have to make a Timestamp Microservice by using basic Node and basic Express.
 
-## Live Demo on Repl
-https://freecodecamp-project-timestamp.jordyf15.repl.co/
+This is a simple timestamp microservice built with Node.js and Express.
 
-## Test/User Stories
-1. The API endpoint is GET [project_url]/api/timestamp/:date_string?
-2. A date string is valid if can be successfully parsed by new Date(date_string).
-Note that the unix timestamp needs to be an integer (not a string) specifying milliseconds.
-In our test we will use date strings compliant with ISO-8601 (e.g. "2016-11-20") because this will ensure an UTC timestamp.
-3. If the date string is empty it should be equivalent to trigger new Date(), i.e. the service uses the current timestamp.
-4. If the date string is valid the api returns a JSON having the structure
-{"unix": <date.getTime()>, "utc" : <date.toUTCString()> }
-e.g. {"unix": 1479663089000 ,"utc": "Sun, 20 Nov 2016 17:31:29 GMT"}
-5. If the date string is invalid the api returns a JSON having the structure
-{"error" : "Invalid Date" }. 
+## Usage
 
-## Example Usage
-1. [project url]/api/timestamp/2015-12-25
-2. [project url]/api/timestamp/1451001600000
+- A request to `/api/:date?` with a valid date should return a JSON object with a `unix` key that is a Unix timestamp of the input date in milliseconds (as type Number).
+- A request to `/api/:date?` with a valid date should return a JSON object with a `utc` key that is a string of the input date in the format: `Thu, 01 Jan 1970 00:00:00 GMT`.
+- A request to `/api/1451001600000` should return `{ unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" }`.
+- Your project can handle dates that can be successfully parsed by `new Date(date_string)`.
+- If the input date string is invalid, the API returns an object having the structure `{ error : "Invalid Date" }`.
+- An empty date parameter should return the current time in a JSON object with a `unix` key.
+- An empty date parameter should return the current time in a JSON object with a `utc` key.
 
-## Example Output
-{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}
+## Installation
 
-## Technology Used
-1. HTML
-2. CSS
-3. Javascript
-4. Node.js version 12.16.3
-5. Express version 4.17.1
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/Timestamp-Microservice.git
+    cd Timestamp-Microservice
+    ```
 
-## Note
-The source code here have a slight different with the one from the repl in the port listening part. Since the one on repl are hosted on repl server while this one is on localhost. Other than that everything else is the same. There are also comments in the source code to explain each part of the code's function.
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
+
+3. Start the server:
+    ```bash
+    npm start
+    ```
+
+4. Open your browser and navigate to `http://localhost:3000`.
+
+## Deployment
+
+This project is configured to be deployed on Netlify. The `netlify.toml` file contains the necessary settings.
+
+## Screenshot
+
+![Screenshot](screenshot.png)
