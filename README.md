@@ -31,7 +31,7 @@ This is a simple timestamp microservice built with Node.js and Express.
     npm start
     ```
 
-4. Open your browser and navigate to `http://localhost:3001`.
+4. Open your browser and navigate to `http://localhost:3000`.
 
 ## Deployment
 
