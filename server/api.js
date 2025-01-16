@@ -10,13 +10,16 @@ class TimestampAPI {
     }
 
     if (date.toString() === "Invalid Date") {
-      throw new Error("Invalid Date");
+      return { error: "Invalid Date" };
     }
 
     return date;
   }
 
   static formatTimestamp(date) {
+    if (date && date.error) {
+      return date;
+    }
     return {
       unix: date.getTime(),
       utc: date.toUTCString()

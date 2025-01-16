@@ -19,30 +19,22 @@ mongoose.connect(mongoURI)
   .catch(err => console.error('MongoDB connection error:', err));
 
 // Serve static files
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../client/public')));
 
 // Timestamp API Route
 app.get('/api/:date?', (req, res) => {
-  try {
-    const dateParam = req.params.date;
-    
-    // Convert date using API utility
-    const result = TimestampAPI.convertDate(dateParam);
-    
-    // Format and send response
-    res.json(TimestampAPI.formatTimestamp(result));
-  } catch (error) {
-    // Handle any unexpected errors
-    res.status(500).json({ 
-      error: "Internal Server Error", 
-      details: error.message 
-    });
-  }
+  const dateParam = req.params.date;
+  
+  // Convert date using API utility
+  const result = TimestampAPI.convertDate(dateParam);
+  
+  // Format and send response
+  res.json(TimestampAPI.formatTimestamp(result));
 });
 
 // Root route with documentation
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, '../client/public', 'index.html'));
 });
 
 // 404 Handler
