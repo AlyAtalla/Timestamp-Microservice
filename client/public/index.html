@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Timestamp Microservice</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <h1>Timestamp Microservice</h1>
+    <p>Enter a date or timestamp:</p>
+    <input type="text" id="dateInput" placeholder="YYYY-MM-DD or Unix Timestamp">
+    <button id="submitBtn">Submit</button>
+    <p>Example usage:</p>
+    <ul>
+      <li>/api/2015-12-25</li>
+      <li>/api/1451001600000</li>
+    </ul>
+    <p>Example output:</p>
+    <pre id="exampleOutput">{ "unix": 1451001600000, "utc": "Fri, 25 Dec 2015 00:00:00 GMT" }</pre>
+    <p>User input output:</p>
+    <pre id="userOutput"></pre>
+    <script src="/index.js" defer></script>
+  </body>
+</html>
